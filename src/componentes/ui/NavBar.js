@@ -38,6 +38,16 @@ export const NavBar = () => {
 
                     <Link activeClass="active"
                         className="nav-item nav-link"
+                        to='Publicaciones'
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}>
+                            Publicaciones
+                    </Link>
+
+                    <Link activeClass="active"
+                        className="nav-item nav-link"
                         to='Lideres'
                         spy={true}
                         smooth={true}
@@ -55,7 +65,15 @@ export const NavBar = () => {
                         duration={500}>
                             Equipo
                     </Link>
-                    <NavLink exact activeClassName="active" to="/contacto" className="nav-item nav-link"> Contacto </NavLink>
+                    <Link activeClass="active"
+                        className="nav-item nav-link"
+                        to='Contacto'
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}>
+                            Contacto
+                    </Link>
                     <NavLink exact activeClassName="active" to="/login" className="nav-item nav-link"> Login</NavLink>
                 </div>
             </div>

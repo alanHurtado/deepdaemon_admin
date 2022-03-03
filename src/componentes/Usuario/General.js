@@ -14,6 +14,7 @@ import { Tab } from "react-bootstrap";
 import { LeaderScreen } from './LeaderScreen';
 import { ProjectScreen } from './ProjectScreen';
 import { TeamScreen } from './TeamScreen';
+import { PublicationScreen } from './PublicationScreen';
 
 
 export const General = ({id}) => {
@@ -103,6 +104,26 @@ export const General = ({id}) => {
           </Tab.Container>
         </Container>
 
+        <Container fluid className="section portfolio" id='Publicaciones'>
+        <h1> Publicaciones </h1>
+
+          <Tab.Container defaultActiveKey="inDevelop">
+            <Nav className="projects">
+              <Nav.Item><Nav.Link eventKey="inDevelop"><h1>Novedades</h1></Nav.Link></Nav.Item>
+              <Nav.Item><Nav.Link eventKey="completed"><h1>Destacado</h1></Nav.Link></Nav.Item>
+            </Nav>
+            <hr />
+            <Tab.Content>
+              <Tab.Pane eventKey="inDevelop">
+                <PublicationScreen />             
+              </Tab.Pane>
+              <Tab.Pane eventKey="completed">
+                <PublicationScreen />             
+              </Tab.Pane>
+            </Tab.Content>
+          </Tab.Container>
+        </Container>
+
         <Container className="section">
           <Row>
             <Col md="auto">
@@ -159,7 +180,7 @@ export const General = ({id}) => {
             </Tab.Container>
         </Container> 
 
-        <Container fluid className="section contact white" id={id}>
+        <Container fluid className="section contact white" id='Contacto'>
           <h1>Hecho en la Ciudad de México</h1>
           <hr />
           <p>
@@ -186,20 +207,6 @@ export const General = ({id}) => {
           <hr />
           <footer>&copy; DeepDaemon 2019</footer>
         </Container>
-        {/* <ModalMember
-          ref={ip => {
-            this.membermodal = ip;
-            console.log(this.membermodal);
-          }}
-        />
-        <ModalProject
-          ref={ip => {
-            this.projectmodal = ip;
-          }}
-        /> */}
-
-
-
       </div>
     )   
 }
