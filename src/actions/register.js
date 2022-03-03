@@ -94,12 +94,13 @@ export const registerTech = (formValues) => {
 
 export const registerProject = (formValues) => {
     //Datos project
-    const {name, desc, impact, frontImg, modalMedia, modalType, link, idTech } = formValues;
+    const {name, desc, status, impact, frontImg, modalMedia, modalType, link, idTech } = formValues;
     //datos tabla project y relacion tech_project
     const dataProject = {
         id: 0,
         name: name,
         descr: desc,
+        status: status || 'indevelop',
         impact: impact,
         front_img: frontImg || 'project_front.jpg',
         modal_media: modalMedia ||'project_modal.jpg',

@@ -11,7 +11,9 @@ import "../../styles/DeepDaemon.css";
 import { Container, Nav } from 'react-bootstrap';
 import {Row, Col, Button, Image} from "react-bootstrap";
 import { Tab } from "react-bootstrap";
-// import { Tabs } from "react-bootstrap";
+import { LeaderScreen } from './LeaderScreen';
+import { ProjectScreen } from './ProjectScreen';
+import { TeamScreen } from './TeamScreen';
 
 
 export const General = ({id}) => {
@@ -87,12 +89,16 @@ export const General = ({id}) => {
           <Tab.Container defaultActiveKey="inDevelop">
             <Nav className="projects">
               <Nav.Item><Nav.Link eventKey="inDevelop"><h1>En desarrollo</h1></Nav.Link></Nav.Item>
-              <Nav.Item><Nav.Link eventKey="article"><h1>Concluidos</h1></Nav.Link></Nav.Item>
+              <Nav.Item><Nav.Link eventKey="completed"><h1>Concluidos</h1></Nav.Link></Nav.Item>
             </Nav>
             <hr />
             <Tab.Content>
-                {/* <Tab.Pane eventKey="inDevelop"> <Projects state="inDevelop" callback={this.openProject.bind(this)} /></Tab.Pane> */}
-                {/* <Tab.Pane eventKey="article"> <Projects state="finish" callback={this.openProject.bind(this)} /> </Tab.Pane> */}
+              <Tab.Pane eventKey="inDevelop">
+                <ProjectScreen status = 'indevelop'/>             
+              </Tab.Pane>
+              <Tab.Pane eventKey="completed">
+                <ProjectScreen status = 'completed'/>             
+              </Tab.Pane>
             </Tab.Content>
           </Tab.Container>
         </Container>
@@ -127,14 +133,31 @@ export const General = ({id}) => {
           </Container>
         </Container>
 
-        <Container fluid className="section" id='Lideres'>
+        <Container fluid className="section portfolio" id='Lideres'>
           <h1>Los líderes</h1>
           <hr />
-          {/* <Team status="leader" callback={this.updateModal.bind(this)} /> */}
-        </Container>
+          <LeaderScreen/>
+         </Container>
+        
+        
         <Container fluid className="section" id='Equipo'>
-          {/* <TeamTabs callback={this.updateModal.bind(this)} /> */}
-        </Container>
+          <h1>Colaboradores</h1>
+          <Tab.Container defaultActiveKey="current">
+              <Nav className="projects">
+                <Nav.Item><Nav.Link eventKey="current"><h1>Las Promesas</h1></Nav.Link></Nav.Item>
+                <Nav.Item><Nav.Link eventKey="graduate"><h1>Los egresados</h1></Nav.Link></Nav.Item>
+              </Nav>
+              <hr />
+              <Tab.Content>
+                <Tab.Pane eventKey="current">
+                  <TeamScreen status = 'current'/>             
+                </Tab.Pane>
+                <Tab.Pane eventKey="graduate">
+                  <TeamScreen status = 'graduate'/>             
+                </Tab.Pane>
+              </Tab.Content>
+            </Tab.Container>
+        </Container> 
 
         <Container fluid className="section contact white" id={id}>
           <h1>Hecho en la Ciudad de México</h1>

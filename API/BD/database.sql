@@ -98,6 +98,7 @@ ADD
 CREATE TABLE `project` (
     `id` int(10) UNSIGNED NOT NULL,
     `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Proyecto',
+    `status` enum('indevelop', 'completed') NOT NULL DEFAULT 'indevelop',
     `descr` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
     `impact` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
     `front_img` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'project_front.jpg',

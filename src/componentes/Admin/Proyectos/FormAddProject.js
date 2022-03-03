@@ -12,6 +12,7 @@ export const FormAddProject = () => {
     const [ formValues, handleInputChange ] = useForm({
 		name: '',
         desc: '',
+		status: '',
         impact: '',
         frontImg:'',
         modalMedia:'',
@@ -155,6 +156,19 @@ export const FormAddProject = () => {
 							<option value = 'embed' > embed </option>
 						</select>
 					</div>
+
+					<div className="col mb-3">
+						<label>Status </label>
+						<select
+							className="form-control"
+							name='status'
+							onChange={ handleInputChange }
+						>
+							<option value = 'indevelop' > Indevelop </option>
+							<option value = 'completed' > Completed </option>
+						</select>
+					</div>
+
 				</div>                
 				<button
 					className="btn2 btn-primary btn-large btn-block"

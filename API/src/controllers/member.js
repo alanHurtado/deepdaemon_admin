@@ -3,7 +3,7 @@ const { response } = require('express');
 const mysqlConnection = require('../database');
 
 
-//obtener todos los datos de todas las school
+//obtener todos los datos de todas los colaboradores
 const viewAllMember = (req, res = response ) => {
     mysqlConnection.query('SELECT * FROM member', (err, rows, fields) => {
         if(!err){
@@ -14,6 +14,17 @@ const viewAllMember = (req, res = response ) => {
     })
 }
 
+//obtener los colaboradores segun su tipo
+const viewSelectMember = (req, res= response ) => {
+    const { status } = req.params; //por url
+    mysqlConnection.query('SELECT *FROM member WHERE status = ?', [status], (err, rows, fields) => {
+      if (!err) {
+        res.json(rows);
+      } else {
+        console.log(err);
+      }
+    });
+  }
 
   //Insertar Career
 const insertMember = (req, res = response ) => {
@@ -65,6 +76,7 @@ const insertMember = (req, res = response ) => {
 
 module.exports = {
     viewAllMember,
+    viewSelectMember,
     insertMember,
     deleteMember
 }

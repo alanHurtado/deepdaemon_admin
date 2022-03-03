@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteMember } from '../../../actions/delete';
 
+
+
 export const MemberCard = (item) => {
     const dispatch = useDispatch();
 
@@ -16,7 +18,7 @@ export const MemberCard = (item) => {
                 <div className="col-md-4"> 
                     <img 
                     src={`../../../../media/team/user.png`}
-                    alt="project" 
+                    alt="member" 
                     className = "card-img"
                     />
                 </div>  

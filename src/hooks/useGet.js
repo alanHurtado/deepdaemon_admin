@@ -1,7 +1,6 @@
 import {useEffect, useState } from 'react'
-// import { getProject } from '../selectors/get/getProject';
 
-export const useGet = (getFuncion) => { 
+export const useGet = (getFuncion, status) => { 
     
     const [state, setstate] = useState({
         data:[],
@@ -9,7 +8,7 @@ export const useGet = (getFuncion) => {
     })
 
     useEffect( () => {
-        getFuncion()
+        getFuncion(status)
             .then( data => {
                 setstate({
                     data: data,
