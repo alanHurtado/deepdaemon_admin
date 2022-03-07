@@ -7,6 +7,278 @@ import { getTech } from '../../../selectors/get/getTech';
 
 export const FormAddRelease = () => {
 
+	const a0 = document.getElementById("autor");
+	const a1 = document.getElementById("title");
+	const a2 = document.getElementById("journal");
+	const a3 = document.getElementById("yearMonth");
+	const a4 = document.getElementById("volume");
+	const a5 = document.getElementById("number");
+	const a6 = document.getElementById("pages");
+	const a7 = document.getElementById("publisher");
+	const a8 = document.getElementById("address");
+	const a9 = document.getElementById("howpublished");
+	const a10 = document.getElementById("booktitle");
+	const a11 = document.getElementById("editor");
+	const a12 = document.getElementById("series");
+	const a13 = document.getElementById("organization");
+	const a14 = document.getElementById("school");
+	const a15 = document.getElementById("note");
+	const a16 = document.getElementById("institution");
+
+	//funcion que recibe el valor del input
+	const cambio = (e) => {
+		//Guardar el valor en una variable
+		let valor = e.target.value;
+		if(valor == "article"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = false;
+			a3.disabled = false;
+			a4.disabled = false;
+			a5.disabled = false;
+			a6.disabled = false;
+			a7.disabled = true;
+			a8.disabled = true;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "book"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true;
+			a5.disabled = true;
+			a6.disabled = true;
+			a7.disabled = false;
+			a8.disabled = false;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "booklet"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true;
+			a5.disabled = true;
+			a6.disabled = true;
+			a7.disabled = true;
+			a8.disabled = true;
+			a9.disabled = false;
+			a10.disabled = false;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "conference"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = false;
+			a3.disabled = false;
+			a4.disabled = false;
+			a5.disabled = false;
+			a6.disabled = false;
+			a7.disabled = true;
+			a8.disabled = true;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "inbook"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true; 
+			a5.disabled = true;
+			a6.disabled = false;
+			a7.disabled = false;
+			a8.disabled = false;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = false;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "incollection"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true;
+			a5.disabled = true;
+			a6.disabled = false;
+			a7.disabled = false;
+			a8.disabled = false;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = false;
+			a12.disabled = false;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "inproceedings"){
+			a0.disabled = true;
+			a1.disabled = true;
+			a2.disabled = true;
+			a3.disabled = true;
+			a4.disabled = true;
+			a5.disabled = true;
+			a6.disabled = true;
+			a7.disabled = true;
+			a8.disabled = true;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "manual"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true;
+			a5.disabled = true;
+			a6.disabled = true;
+			a7.disabled = true;
+			a8.disabled = false;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = false;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "mastersthesis" || valor == "phdthesis"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true;
+			a5.disabled = true;
+			a6.disabled = true;
+			a7.disabled = true;
+			a8.disabled = false;
+			a9.disabled = true;
+			a10.disabled = false;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = false;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "proceedings"){
+			a0.disabled = true;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = false;
+			a5.disabled = true;
+			a6.disabled = true;
+			a7.disabled = false;
+			a8.disabled = false;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = true;
+			a12.disabled = false;
+			a13.disabled = false;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+		else if(valor == "techreport"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true;
+			a5.disabled = false;
+			a6.disabled = true;
+			a7.disabled = true;
+			a8.disabled = false;
+			a9.disabled = true;
+			a10.disabled = false;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = false;
+		}
+		else if(valor == "misc"){
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true;
+			a5.disabled = true;
+			a6.disabled = true;
+			a7.disabled = true;
+			a8.disabled = true;
+			a9.disabled = false;
+			a10.disabled = true;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = false;
+			a16.disabled = true;
+		}
+		else{
+			a0.disabled = false;
+			a1.disabled = false;
+			a2.disabled = true;
+			a3.disabled = false;
+			a4.disabled = true;
+			a5.disabled = true;
+			a6.disabled = true;
+			a7.disabled = true;
+			a8.disabled = true;
+			a9.disabled = true;
+			a10.disabled = true;
+			a11.disabled = true;
+			a12.disabled = true;
+			a13.disabled = true;
+			a14.disabled = true;
+			a15.disabled = true;
+			a16.disabled = true;
+		}
+	}
+	
+	
     const dispatch = useDispatch();
     const [ formValues, handleInputChange ] = useForm({
 		postType: '',
@@ -59,7 +331,7 @@ export const FormAddRelease = () => {
 						<select
 							className="form-control"
 							name='postType'
-							onChange={ handleInputChange }
+							onChange={ (e) => cambio(e) }
 						>
 							<option value = 'article' > article </option>
 							<option value = 'book' > book </option>
@@ -138,6 +410,9 @@ export const FormAddRelease = () => {
 							}
 						</select>
 				</div>
+
+
+
 				<div className="row">
 					<div className="col mb-3">
 						<label> Autor </label>
@@ -145,9 +420,11 @@ export const FormAddRelease = () => {
 							className="form-control"
 							type='text'
 							name='autor'
+							id = 'autor'
 							placeholder='Autor'
 							value = { autor }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					<div className="col mb-3">
@@ -156,9 +433,11 @@ export const FormAddRelease = () => {
 							className="form-control"
 							type='text'
 							name='title'
+							id = 'title'
 							placeholder='Title'
 							value = { title }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 				</div>
@@ -169,9 +448,11 @@ export const FormAddRelease = () => {
 							className="form-control"
 							type='url'
 							name='link'
+							id = 'link'
 							placeholder='Enlace'
 							value = { link }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					
@@ -180,9 +461,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='journal'
+							id = 'journal'
 							placeholder='Journal'
 							value = { journal }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 				</div>
@@ -193,8 +476,10 @@ export const FormAddRelease = () => {
 								type='date'
 								min ='1900-01-01'
 								name='yearMonth'
+								id = 'yearMonth'
 								value = { yearMonth }
 								onChange={ handleInputChange }
+								disabled = {true}
 							/>
 					</div>
 					<div className="col mb-3">
@@ -202,9 +487,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='volume'
+							id = 'volume'
 							placeholder='Volume'
 							value = { volume }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					<div className="col mb-3">
@@ -212,9 +499,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='number'
+							id = 'number'
 							placeholder='Number'
 							value = { number }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					<div className="col mb-3">
@@ -222,9 +511,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='pages'
+							id = 'pages'
 							placeholder='Pages'
 							value = { pages }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 				</div>
@@ -235,9 +526,11 @@ export const FormAddRelease = () => {
 							className="form-control" 
 							type='text'
 							name='publisher'
+							id = 'publisher'
 							placeholder='Publisher'
 							value = { publisher }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					<div className="col mb-3">
@@ -245,9 +538,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='address'
+							id = 'address'
 							placeholder='Address'
 							value = { address }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 				</div>
@@ -257,9 +552,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='howpublished'
+							id = 'howpublished'
 							placeholder='Howpublished'
 							value = { howpublished }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					<div className="col mb-3">
@@ -267,9 +564,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='booktitle'
+							id = 'booktitle'
 							placeholder='Booktitle'
 							value = { booktitle }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 
@@ -280,9 +579,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='editor'
+							id = 'editor'
 							placeholder='Editor'
 							value = { editor }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					<div className="col mb-3">
@@ -290,9 +591,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='series'
+							id = 'series'
 							placeholder='Series'
 							value = { series }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					
@@ -303,9 +606,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='organization'
+							id = 'organization'
 							placeholder='Organization'
 							value = { organization }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					<div className="col mb-3">
@@ -313,9 +618,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='school'
+							id = 'school'
 							placeholder='School'
 							value = { school }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 				</div>
 				</div>
@@ -325,9 +632,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='note'
+							id = 'note'
 							placeholder='Note'
 							value = { note }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 					
@@ -336,9 +645,11 @@ export const FormAddRelease = () => {
 						<input className="form-control" 
 							type='text'
 							name='institution'
+							id = 'institution'
 							placeholder='Institution'
 							value = { institution }
 							onChange={ handleInputChange }
+							disabled = {true}
 						/>
 					</div>
 				</div>
