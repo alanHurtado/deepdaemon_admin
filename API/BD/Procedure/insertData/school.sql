@@ -1,7 +1,7 @@
-USE deepdaem_web_admin;
+USE deepdae1_adminweb;
 
 DELIMITER $$
-USE `deepdaem_web_admin`$$
+USE `deepdae1_adminweb;`$$
 
 CREATE PROCEDURE `schoolAddOrEdit` (
   IN _id INT,
