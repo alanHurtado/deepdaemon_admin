@@ -1,5 +1,7 @@
+import { apiDir } from "../../helpers/api";
+
 export const postPublication = async(dataRelease) => {
-    const urlPublication ='http://localhost:4000/api/publication';
+    const urlPublication =`${apiDir}/api/publication`;
         const configPublication = {
             method: 'POST',
             headers: {

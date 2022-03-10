@@ -1,6 +1,8 @@
+import { apiDir } from "../../helpers/api";
+
 export const getTech = async() => {
     
-    const url = 'http://localhost:4000/api/tech';
+    const url = `${apiDir}/api/tech`;
     const resp = await fetch( url );
     const data = await resp.json();
 

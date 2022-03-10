@@ -1,5 +1,7 @@
+import { apiDir } from '../../helpers/api';
+
 const postCareer = async(dataCareer) => {
-    const urlCareer ='http://localhost:4000/api/career';
+    const urlCareer =`${apiDir}/api/career`;
     const configCareer = {
         method: 'POST',
         headers: {

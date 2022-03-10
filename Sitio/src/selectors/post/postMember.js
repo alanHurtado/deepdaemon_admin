@@ -1,5 +1,7 @@
+import { apiDir } from "../../helpers/api";
+
 const postMember = async(dataMember) => {
-    const urlMember='http://localhost:4000/api/member';
+    const urlMember=`${apiDir}/api/member`;
         const configMember = {
             method: 'POST',
             headers: {

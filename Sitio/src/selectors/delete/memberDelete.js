@@ -1,5 +1,7 @@
+import { apiDir } from "../../helpers/api";
+
 export const memberDelete = async(id) => {
-    const urlMember ='http://localhost:4000/api/member';
+    const urlMember =`${apiDir}/api/member`;
     const configMember = {
         method: 'DELETE',
         headers: {

@@ -1,5 +1,7 @@
+import { apiDir } from "../../helpers/api";
+
 export const deleteHProject = async(id) => {
-    const urlProject ='http://localhost:4000/api/project';
+    const urlProject =`${apiDir}/api/project`;
     const configProject = {
         method: 'DELETE',
         headers: {

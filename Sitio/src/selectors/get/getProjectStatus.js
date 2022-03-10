@@ -1,7 +1,8 @@
-export const getProjectStatus = async(status) => {
+import { apiDir } from "../../helpers/api";
 
+export const getProjectStatus = async(status) => {
     
-    const url = `http://localhost:4000/api/project/${status}`;
+    const url = `${apiDir}/api/project/${status}`;
         const resp = await fetch( url );
         const data = await resp.json();
     

@@ -1,6 +1,8 @@
 
+import { apiDir } from "../../helpers/api";
+
 const postProject = async(dataProject) => {
-    const urlProject ='http://localhost:4000/api/project';
+    const urlProject =`${apiDir}/api/project`;
     const configProject = {
         method: 'POST',
         headers: {

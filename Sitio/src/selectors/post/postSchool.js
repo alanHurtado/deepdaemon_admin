@@ -1,5 +1,7 @@
+import { apiDir } from "../../helpers/api";
+
 const postSchool = async(dataSchool) => {
-    const urlSchool ='http://localhost:4000/api/school';
+    const urlSchool =`${apiDir}/api/school`;
     const configSchool = {
         method: 'POST',
         headers: {

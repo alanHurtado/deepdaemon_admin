@@ -1,5 +1,7 @@
+import { apiDir } from "../../helpers/api";
+
 const postTech = async(dataTech) => {
-    const urlTech ='http://localhost:4000/api/tech';
+    const urlTech =`{$apiDir}/api/tech`;
          const configTech = {
              method: 'POST',
              headers: {
